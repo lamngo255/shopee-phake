@@ -1,19 +1,18 @@
 import React from 'react';
-import HeaderRegister from 'src/components/HeaderRegister/HeaderRegister';
+import Header from 'src/components/Header/Header';
 import Footer from 'src/components/Footer/Footer';
 import PropTypes from 'prop-types';
 
-export default function RegisterLayout({ children, title }) {
+export default function MainLayout({ children }) {
   return (
     <div>
-      <HeaderRegister title={title} />
+      <Header />
       {children}
       <Footer />
     </div>
   );
 }
 
-RegisterLayout.propTypes = {
-  title: PropTypes.string,
+MainLayout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
 };

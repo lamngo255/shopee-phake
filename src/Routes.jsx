@@ -6,12 +6,15 @@ import Login from './pages/Auth/Login/Login';
 import Register from './pages/Auth/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import RegisterLayout from './layouts/RegisterLayout/RegisterLayout';
+import MainLayout from './layouts/MainLayout/MainLayout';
 
 export default function Routes() {
   return (
     <Switch>
       <Route path={path.home} exact>
-        <Home />
+        <MainLayout>
+          <Home />
+        </MainLayout>
       </Route>
       <Route path={path.login}>
         <RegisterLayout title="Đăng nhập">
