@@ -6,6 +6,9 @@ export const productAPI = {
   getProducts(config) {
     return http.get(URL, config);
   },
+  getProductDetail(id) {
+    return http.get(`${URL}/${id}`);
+  },
 };
 
 export default productAPI;

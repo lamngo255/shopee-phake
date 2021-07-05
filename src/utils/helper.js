@@ -25,3 +25,10 @@ export const formatK = value => {
   }
   return value;
 };
+
+export const getIdFromNameId = url => {
+  const arr = url.split('-i.');
+  return arr[arr.length - 1];
+};
+
+export const rateSale = (original, sale) => Math.round(((original - sale) / original) * 100) + '%';

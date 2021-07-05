@@ -45,6 +45,7 @@ export default function Home() {
       price_min: _filters.minPrice,
       sort_by: _filters.sortBy,
       order: _filters.order,
+      name: _filters.name,
     };
 
     (async () => {

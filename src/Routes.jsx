@@ -8,6 +8,7 @@ import User from './pages/User/User';
 import NotFound from './pages/NotFound/NotFound';
 import RegisterLayout from './layouts/RegisterLayout/RegisterLayout';
 import MainLayout from './layouts/MainLayout/MainLayout';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
 import UnauthenticatedGuard from './guards/UnauthenticatedGuard';
 import AuthenticatedGuard from './guards/AuthenticatedGuard';
 
@@ -17,6 +18,11 @@ export default function Routes() {
       <Route path={path.home} exact>
         <MainLayout>
           <Home />
+        </MainLayout>
+      </Route>
+      <Route path={path.productDetail} exact>
+        <MainLayout>
+          <ProductDetail />
         </MainLayout>
       </Route>
       <Route path={path.login}>
