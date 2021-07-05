@@ -1,5 +1,5 @@
 import { unwrapResult } from '@reduxjs/toolkit';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import ProductQuantityController from 'src/components/ProductQuantityController/ProductQuantityController';
@@ -10,6 +10,15 @@ import * as S from './productDetail.style';
 
 export default function ProductDetail() {
   const [product, setProduct] = useState();
+  const [currentImage, setCurrentImage] = useState({});
+  const [currentIndexImages, setCurrentIndexImages] = useState([0, 5]);
+  const currentImages = useMemo(() => {
+    if (product) {
+      return product.images.slice(...currentIndexImages);
+    }
+    return [];
+  }, [product, currentIndexImages]);
+
   const { idProduct } = useParams();
   const dispatch = useDispatch();
 
@@ -18,9 +27,30 @@ export default function ProductDetail() {
     dispatch(getProductDetail(realId))
       .then(unwrapResult)
       .then(res => {
+        res.data.images = res.data.images.map((image, index) => {
+          return {
+            url: image,
+            id: index,
+          };
+        });
+        setCurrentImage(res.data.images[0]);
         setProduct(res.data);
       });
   }, [dispatch, idProduct]);
+
+  const chooseCurrent = image => setCurrentImage(image);
+
+  const choosePrev = () => {
+    if (currentIndexImages[0] > 0) {
+      setCurrentIndexImages(currentIndexImages => [currentIndexImages[0] - 1, currentIndexImages[1] - 1]);
+    }
+  };
+
+  const chooseNext = () => {
+    if (currentIndexImages[1] < product.images.length) {
+      setCurrentIndexImages(currentIndexImages => [currentIndexImages[0] + 1, currentIndexImages[1] + 1]);
+    }
+  };
 
   return (
     <div>
@@ -29,10 +59,10 @@ export default function ProductDetail() {
           <S.ProductBriefing>
             <S.ProductImages>
               <S.ProductImageActive>
-                <img src={product.image} alt="" />
+                <img src={currentImage.url} alt="" />
               </S.ProductImageActive>
               <S.ProductImageSlider>
-                <S.ProductIconButtonPrev>
+                <S.ProductIconButtonPrev onClick={choosePrev}>
                   <svg
                     enableBackground="new 0 0 13 20"
                     viewBox="0 0 13 20"
@@ -43,12 +73,16 @@ export default function ProductDetail() {
                     <polygon points="4.2 10 12.1 2.1 10 -.1 1 8.9 -.1 10 1 11 10 20 12.1 17.9" />
                   </svg>
                 </S.ProductIconButtonPrev>
-                {product.images.map((image, index) => (
-                  <S.ProductImage key={index}>
-                    <img src={image} alt="" />
+                {currentImages.map(image => (
+                  <S.ProductImage
+                    key={image.id}
+                    onMouseEnter={() => chooseCurrent(image)}
+                    active={currentImage.id === image.id}
+                  >
+                    <img src={image.url} alt="" />
                   </S.ProductImage>
                 ))}
-                <S.ProductIconButtonNext>
+                <S.ProductIconButtonNext onClick={chooseNext}>
                   <svg
                     enableBackground="new 0 0 13 21"
                     viewBox="0 0 13 21"

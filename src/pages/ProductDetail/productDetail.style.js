@@ -37,7 +37,7 @@ const ProductIconButton = styled.button`
   width: 2rem;
   height: 4rem;
   top: 50%;
-  transform: translateY() (-50%);
+  transform: translateY(-50%);
   color: #fff;
   border: none;
   background-color: rgba(0, 0, 0, 0.2);
