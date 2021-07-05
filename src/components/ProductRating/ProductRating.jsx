@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './productRating.style';
 import PropTypes from 'prop-types';
 
-export default function ProductRating({ rating = 4.5 }) {
+export default function ProductRating({ rating }) {
   const handleWidth = index => {
     const _index = index + 1;
     if (_index <= rating) {

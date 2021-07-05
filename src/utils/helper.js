@@ -1,6 +1,5 @@
 export const isEmail = value => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   return re.test(value);
 };
 
@@ -12,4 +11,17 @@ export const payloadCreator = asyncFunc => async (arg, thunkApi) => {
   } catch (err) {
     return thunkApi.rejectWithValue(err);
   }
+};
+
+export const generateNameId = ({ name, _id }) =>
+  encodeURIComponent(`${name.replace(/\s/g, '-').replace(/%/g, '')}-i.${_id}`);
+
+export const formatMoney = (value, character = '.') => String(value).replace(/\B(?=(\d{3})+(?!\d))/g, character);
+
+export const formatK = value => {
+  const price = Number((Number(value) / 1000).toFixed(2));
+  if (price > 1) {
+    return price + 'k';
+  }
+  return value;
 };
