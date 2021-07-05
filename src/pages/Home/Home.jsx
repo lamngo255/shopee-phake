@@ -28,6 +28,7 @@ export default function Home() {
       ...query,
       page: query.page || 1,
       limit: query.limit || 30,
+      sortBy: query.sortBy || 'view',
     };
     setFilters(_filters);
 
@@ -39,6 +40,8 @@ export default function Home() {
       rating_filter: _filters.rating,
       price_max: _filters.maxPrice,
       price_min: _filters.minPrice,
+      sort_by: _filters.sortBy,
+      order: _filters.order,
     };
 
     (async () => {
@@ -55,7 +58,7 @@ export default function Home() {
           <FilterPanel categories={categories} filters={filters} />
         </S.Side>
         <S.Main>
-          <SearchItemResult products={products} />
+          <SearchItemResult products={products} filters={filters} />
         </S.Main>
       </S.Container>
     </div>

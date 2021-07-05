@@ -3,19 +3,55 @@ import ProductItem from '../ProductItem/ProductItem';
 import Pagination from '../Pagination/Pagination';
 import * as S from './searchItemResult.style';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
+import { path } from 'src/constants/path';
+import qs from 'query-string';
+import classNames from 'classnames';
 
-export default function SearchItemResult({ products }) {
+export default function SearchItemResult({ products, filters }) {
   const { products: productList } = products;
+  const history = useHistory();
+
+  const sortBy = (sortBy, order) => {
+    const _filters = { ...filters, sortBy };
+    if (order) {
+      _filters.order = order;
+    } else {
+      delete _filters.order;
+    }
+
+    history.push(path.home + `?${qs.stringify(_filters)}`);
+  };
+
+  const handleActiveOptionSort = value => classNames({ active: value === filters.sortBy });
+
+  const handleSortByPriceValue = () => {
+    let value = `${filters.sortBy}:${filters.order}`;
+    if (value !== 'price:asc' && value !== 'price:desc') {
+      value = '';
+    }
+    return value;
+  };
 
   return (
     <div>
       <S.SortBar>
         <S.SortBarLabel>Sắp xếp theo</S.SortBarLabel>
         <S.SortByOptions>
-          <S.SortByOptionsOption className="active">Phổ biến</S.SortByOptionsOption>
-          <S.SortByOptionsOption>Mới nhất</S.SortByOptionsOption>
-          <S.SortByOptionsOption>Bán chạy</S.SortByOptionsOption>
-          <S.SortByPrice>
+          <S.SortByOptionsOption onClick={() => sortBy('view')} className={handleActiveOptionSort('view')}>
+            Phổ biến
+          </S.SortByOptionsOption>
+          <S.SortByOptionsOption onClick={() => sortBy('createdAt')} className={handleActiveOptionSort('createdAt')}>
+            Mới nhất
+          </S.SortByOptionsOption>
+          <S.SortByOptionsOption onClick={() => sortBy('sold')} className={handleActiveOptionSort('sold')}>
+            Bán chạy
+          </S.SortByOptionsOption>
+          <S.SortByPrice
+            onChange={event => sortBy(...event.target.value.split(':'))}
+            className={handleActiveOptionSort('price')}
+            value={handleSortByPriceValue()}
+          >
             <option disabled value="">
               Giá
             </option>
@@ -66,4 +102,5 @@ SearchItemResult.propTypes = {
     products: PropTypes.array,
     pagination: PropTypes.object,
   }),
+  filters: PropTypes.object,
 };
