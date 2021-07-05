@@ -10,7 +10,10 @@ import useQuery from 'src/hooks/useQuery';
 
 export default function Home() {
   const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState({});
+  const [products, setProducts] = useState({
+    products: [],
+    pagination: {},
+  });
   const [filters, setFilters] = useState({});
   const dispatch = useDispatch();
   const query = useQuery();
