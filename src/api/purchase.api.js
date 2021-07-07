@@ -14,6 +14,9 @@ const purchaseAPI = {
       },
     });
   },
+  updatePurchase(data) {
+    return http.put(`${URL}/update-purchase`, data);
+  },
 };
 
 export default purchaseAPI;

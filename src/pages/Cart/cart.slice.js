@@ -5,6 +5,8 @@ import purchaseAPI from 'src/api/purchase.api';
 
 export const getCartPurchases = createAsyncThunk('cart/getCartPurchases', payloadCreator(purchaseAPI.getCartPurchases));
 
+export const updatePurchase = createAsyncThunk('cart/updatePurchase', payloadCreator(purchaseAPI.updatePurchase));
+
 const cart = createSlice({
   name: 'cart',
   initialState: {
