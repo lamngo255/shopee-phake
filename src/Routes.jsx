@@ -11,6 +11,8 @@ import MainLayout from './layouts/MainLayout/MainLayout';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import UnauthenticatedGuard from './guards/UnauthenticatedGuard';
 import AuthenticatedGuard from './guards/AuthenticatedGuard';
+import CartLayout from './layouts/CartLayout/CartLayout';
+import Cart from './pages/Cart/Cart';
 
 export default function Routes() {
   return (
@@ -44,6 +46,13 @@ export default function Routes() {
           <MainLayout>
             <User />
           </MainLayout>
+        </AuthenticatedGuard>
+      </Route>
+      <Route path={path.cart}>
+        <AuthenticatedGuard>
+          <CartLayout>
+            <Cart />
+          </CartLayout>
         </AuthenticatedGuard>
       </Route>
       <Route path={path.notFound}>

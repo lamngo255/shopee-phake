@@ -1,17 +1,21 @@
-import { unwrapResult } from '@reduxjs/toolkit';
 import React, { useEffect, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { unwrapResult } from '@reduxjs/toolkit';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { formatK, formatMoney, getIdFromNameId, rateSale } from 'src/utils/helper';
+import { addToCart, getProductDetail } from './productDetail.slice';
+import DOMPurify from 'dompurify';
 import ProductQuantityController from 'src/components/ProductQuantityController/ProductQuantityController';
 import ProductRating from 'src/components/ProductRating/ProductRating';
-import { formatK, formatMoney, getIdFromNameId, rateSale } from 'src/utils/helper';
-import { getProductDetail } from './productDetail.slice';
 import * as S from './productDetail.style';
+import { getCartPurchases } from '../Cart/cart.slice';
 
 export default function ProductDetail() {
   const [product, setProduct] = useState();
   const [currentImage, setCurrentImage] = useState({});
   const [currentIndexImages, setCurrentIndexImages] = useState([0, 5]);
+  const [quantity, setQuantity] = useState(1);
   const currentImages = useMemo(() => {
     if (product) {
       return product.images.slice(...currentIndexImages);
@@ -50,6 +54,22 @@ export default function ProductDetail() {
     if (currentIndexImages[1] < product.images.length) {
       setCurrentIndexImages(currentIndexImages => [currentIndexImages[0] + 1, currentIndexImages[1] + 1]);
     }
+  };
+
+  const handleChangeQuantity = value => setQuantity(value);
+
+  const handleAddToCart = async () => {
+    const body = {
+      product_id: product._id,
+      buy_count: quantity,
+    };
+    const res = await dispatch(addToCart(body)).then(unwrapResult);
+    await dispatch(getCartPurchases()).then(unwrapResult);
+
+    toast.success(res.message, {
+      position: 'top-center',
+      autoClose: 4000,
+    });
   };
 
   return (
@@ -117,11 +137,11 @@ export default function ProductDetail() {
               <S.ProductBuyQuantity>
                 <S.ProductBuyQuantityTitle>Số lượng</S.ProductBuyQuantityTitle>
                 <S.ProductBuyQuantityController>
-                  <ProductQuantityController />
+                  <ProductQuantityController value={quantity} max={product.quantity} onChange={handleChangeQuantity} />
                 </S.ProductBuyQuantityController>
                 <S.ProductBuyQuantityQuantity>{product.quantity} sản phẩm có sẵn</S.ProductBuyQuantityQuantity>
               </S.ProductBuyQuantity>
-              <S.ProductButtons>
+              <S.ProductButtons onClick={handleAddToCart}>
                 <svg
                   enableBackground="new 0 0 15 15"
                   viewBox="0 0 15 15"
@@ -152,7 +172,7 @@ export default function ProductDetail() {
 
           <S.ProductContent>
             <S.ProductContentHeading>MÔ TẢ SẢN PHẨM</S.ProductContentHeading>
-            <S.ProductContentDetail></S.ProductContentDetail>
+            <S.ProductContentDetail dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(product.description) }} />
           </S.ProductContent>
         </div>
       )}

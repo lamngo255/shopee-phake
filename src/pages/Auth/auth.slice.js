@@ -15,21 +15,27 @@ const handleAuthFulfilled = (state, action) => {
   localStorage.setItem(LocalStorage.accessToken, access_token);
 };
 
+const handleUnauth = state => {
+  state.profile = {};
+  localStorage.removeItem(LocalStorage.user);
+  localStorage.removeItem(LocalStorage.accessToken);
+};
+
 const auth = createSlice({
   name: 'auth',
   initialState: {
     profile: JSON.parse(localStorage.getItem(LocalStorage.user)) || {},
   },
+  reducers: {
+    unauthorize: handleUnauth,
+  },
   extraReducers: {
     [register.fulfilled]: handleAuthFulfilled,
     [login.fulfilled]: handleAuthFulfilled,
-    [logout.fulfilled]: state => {
-      state.profile = {};
-      localStorage.removeItem(LocalStorage.user);
-      localStorage.removeItem(LocalStorage.accessToken);
-    },
+    [logout.fulfilled]: handleUnauth,
   },
 });
 
 const authReducer = auth.reducer;
+export const unauthorize = auth.actions.unauthorize;
 export default authReducer;
