@@ -4,8 +4,9 @@ import { logout } from '../Auth/auth.slice';
 import purchaseAPI from 'src/api/purchase.api';
 
 export const getCartPurchases = createAsyncThunk('cart/getCartPurchases', payloadCreator(purchaseAPI.getCartPurchases));
-
 export const updatePurchase = createAsyncThunk('cart/updatePurchase', payloadCreator(purchaseAPI.updatePurchase));
+export const deletePurchases = createAsyncThunk('cart/deletePurchases', payloadCreator(purchaseAPI.deletePurchases));
+export const buyPurchases = createAsyncThunk('cart/buyPurchases', payloadCreator(purchaseAPI.buyPurchases));
 
 const cart = createSlice({
   name: 'cart',
