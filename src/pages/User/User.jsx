@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { path } from 'src/constants/path';
 import Profile from './Profile/Profile';
 import Password from './Password/Password';
