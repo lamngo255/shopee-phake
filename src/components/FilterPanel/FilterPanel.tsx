@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { path } from '@/constants/path';
 import RatingStars from '../RatingStars/RatingStars';

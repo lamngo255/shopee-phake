@@ -119,7 +119,7 @@ export default function Cart() {
     const purchase_id = localPurchases[indexPurchase]._id;
     await dispatch(deletePurchases([purchase_id])).then(unwrapResult);
     await dispatch(getCartPurchases()).then(unwrapResult);
-    toast.success('Xoá đơn thành công', {
+    toast.success('Remove successfully!', {
       position: 'top-center',
       autoClose: 3000,
     });
@@ -129,7 +129,7 @@ export default function Cart() {
     const purchase_ids = checkedPurchases.map(purchase => purchase._id);
     await dispatch(deletePurchases(purchase_ids)).then(unwrapResult);
     await dispatch(getCartPurchases()).then(unwrapResult);
-    toast.success('Xoá đơn thành công', {
+    toast.success('Remove successfully!', {
       position: 'top-center',
       autoClose: 3000,
     });
@@ -143,7 +143,7 @@ export default function Cart() {
       }));
       await dispatch(buyPurchases(body)).then(unwrapResult);
       await dispatch(getCartPurchases()).then(unwrapResult);
-      toast.success('Đặt đơn hàng thành công', {
+      toast.success('Purchase successfully!', {
         position: 'top-center',
         autoClose: 3000,
       });
@@ -157,11 +157,11 @@ export default function Cart() {
           <S.ProductHeaderCheckbox>
             <Checkbox onChange={handleCheckAll} checked={isCheckedAll} />
           </S.ProductHeaderCheckbox>
-          <S.ProductHeaderName>Sản phẩm</S.ProductHeaderName>
-          <S.ProductHeaderUnitPrice>Đơn giá</S.ProductHeaderUnitPrice>
-          <S.ProductHeaderQuantity>Số lượng</S.ProductHeaderQuantity>
-          <S.ProductHeaderTotalPrice>Số tiền</S.ProductHeaderTotalPrice>
-          <S.ProductHeaderAction>Thao tác</S.ProductHeaderAction>
+          <S.ProductHeaderName>Product</S.ProductHeaderName>
+          <S.ProductHeaderUnitPrice>Unit Price</S.ProductHeaderUnitPrice>
+          <S.ProductHeaderQuantity>Quantity</S.ProductHeaderQuantity>
+          <S.ProductHeaderTotalPrice>Cost</S.ProductHeaderTotalPrice>
+          <S.ProductHeaderAction>Action</S.ProductHeaderAction>
         </S.ProductHeader>
         <S.ProductSection>
           {localPurchases.map((purchase, index) => (
@@ -196,7 +196,7 @@ export default function Cart() {
                 <span>đ{formatMoney(purchase.product.price * purchase.buy_count)}</span>
               </S.CartItemTotalPrice>
               <S.CartItemAction>
-                <S.CartItemActionButton onClick={handleRemove(index)}>Xoá</S.CartItemActionButton>
+                <S.CartItemActionButton onClick={handleRemove(index)}>Remove</S.CartItemActionButton>
               </S.CartItemAction>
             </S.CartItem>
           ))}
@@ -207,20 +207,20 @@ export default function Cart() {
         <S.CartFooterCheckbox>
           <Checkbox onChange={handleCheckAll} checked={isCheckedAll} />
         </S.CartFooterCheckbox>
-        <S.CartFooterButton onClick={handleCheckAll}>Chọn tất cả ({purchases.length})</S.CartFooterButton>
-        <S.CartFooterButton onClick={handleRemoveManyPurchases}>Xoá</S.CartFooterButton>
+        <S.CartFooterButton onClick={handleCheckAll}>Choose all ({purchases.length})</S.CartFooterButton>
+        <S.CartFooterButton onClick={handleRemoveManyPurchases}>Remove</S.CartFooterButton>
         <S.CartFooterSpaceBetween></S.CartFooterSpaceBetween>
         <S.CartFooterPrice>
           <S.CartFooterPriceTop>
-            <div>Tổng thanh toán ({totalCheckedPurchases} sản phẩm)</div>
+            <div>Total price ({totalCheckedPurchases} products)</div>
             <div>đ{formatMoney(totalCheckedPurchasesPrice)}</div>
           </S.CartFooterPriceTop>
           <S.CartFooterPriceBot>
-            <div>Tiết kiệm</div>
+            <div>Save</div>
             <div>đ{formatMoney(totalCheckedPurchasesSavingPrice)}</div>
           </S.CartFooterPriceBot>
         </S.CartFooterPrice>
-        <S.CartFooterCheckout onClick={handleBuyPurchases}>Mua hàng</S.CartFooterCheckout>
+        <S.CartFooterCheckout onClick={handleBuyPurchases}>Check Out</S.CartFooterCheckout>
       </S.CartFooter>
     </div>
   );
