@@ -1,4 +1,4 @@
-import { Button } from 'src/assets/styles/utils';
+import { Button } from '@/assets/styles/utils';
 import styled from 'styled-components';
 
 export const StyledRegister = styled.div`

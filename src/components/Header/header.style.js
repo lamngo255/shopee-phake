@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button, ButtonLink } from 'src/assets/styles/utils';
+import { Button, ButtonLink } from '@/assets/styles/utils';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`

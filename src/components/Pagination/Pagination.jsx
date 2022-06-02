@@ -3,7 +3,7 @@ import * as S from './pagination.style';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 import { usePagination } from '@material-ui/lab';
-import { path } from 'src/constants/path';
+import { path } from '@/constants/path';
 import classNames from 'classnames';
 import qs from 'query-string';
 

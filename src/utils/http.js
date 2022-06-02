@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import LocalStorage from 'src/constants/localStorage';
+import LocalStorage from '@/constants/localStorage';
 
 class Http {
   constructor() {
     this.instance = axios.create({
-      baseURL: process.env.REACT_APP_API,
+      baseURL: import.meta.env.VITE_APP_API,
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json',

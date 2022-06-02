@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { path } from 'src/constants/path';
-import { formatMoney } from 'src/utils/helper';
-import usePopover from 'src/hooks/usePopover';
-import useQuery from 'src/hooks/useQuery';
+import { path } from '@/constants/path';
+import { formatMoney } from '@/utils/helper';
+import usePopover from '@/hooks/usePopover';
+import useQuery from '@/hooks/useQuery';
 import Navbar from '../Navbar/Navbar';
 import Popover from '../Popover/Popover';
 import * as S from './header.style';

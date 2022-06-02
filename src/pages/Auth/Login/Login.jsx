@@ -2,12 +2,12 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import { Button } from 'src/assets/styles/utils';
-import { path } from 'src/constants/path';
-import { rules } from 'src/constants/rules';
-import ErrorMessage from 'src/components/ErrorMessage/ErrorMessage';
-import InputPassword from 'src/components/InputPassword/InputPassword';
-import InputText from 'src/components/InputText/InputText';
+import { Button } from '@/assets/styles/utils';
+import { path } from '@/constants/path';
+import { rules } from '@/constants/rules';
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
+import InputPassword from '@/components/InputPassword/InputPassword';
+import InputText from '@/components/InputText/InputText';
 import * as S from '../Register/register.style';
 import { login } from '../auth.slice';
 import { unwrapResult } from '@reduxjs/toolkit';
@@ -96,7 +96,7 @@ export default function Login() {
             </S.FormButton>
           </S.Form>
           <S.FormFooter>
-            <span>You just heard of Shopee</span>
+            <span>You just heard of Shopee?</span>
             <Link to={path.register} className="link">
               Register
             </Link>

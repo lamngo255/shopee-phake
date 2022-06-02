@@ -3,11 +3,11 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { formatK, formatMoney, getIdFromNameId, rateSale } from 'src/utils/helper';
+import { formatK, formatMoney, getIdFromNameId, rateSale } from '@/utils/helper';
 import { addToCart, getProductDetail } from './productDetail.slice';
 import DOMPurify from 'dompurify';
-import ProductQuantityController from 'src/components/ProductQuantityController/ProductQuantityController';
-import ProductRating from 'src/components/ProductRating/ProductRating';
+import ProductQuantityController from '@/components/ProductQuantityController/ProductQuantityController';
+import ProductRating from '@/components/ProductRating/ProductRating';
 import * as S from './productDetail.style';
 import { getCartPurchases } from '../Cart/cart.slice';
 

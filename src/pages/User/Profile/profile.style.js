@@ -1,5 +1,5 @@
-import { Button } from 'src/assets/styles/utils';
-import Select from 'src/components/Select/Select';
+import { Button } from '@/assets/styles/utils';
+import Select from '@/components/Select/Select';
 import styled from 'styled-components';
 
 export const Profile = styled.div`

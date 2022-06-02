@@ -1,6 +1,6 @@
 import React from 'react';
-import HeaderCart from 'src/components/HeaderCart/HeaderCart';
-// import Footer from 'src/components/Footer/Footer';
+import HeaderCart from '@/components/HeaderCart/HeaderCart';
+// import Footer from '@/components/Footer/Footer';
 import PropTypes from 'prop-types';
 
 export default function CartLayout({ children }) {

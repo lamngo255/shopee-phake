@@ -1,5 +1,5 @@
-import { purchaseStatus } from 'src/constants/status';
-import http from 'src/utils/http';
+import { purchaseStatus } from '@/constants/status';
+import http from '@/utils/http';
 
 const URL = 'purchases';
 

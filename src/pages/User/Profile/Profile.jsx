@@ -2,12 +2,12 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDate, getMonth, getYear, isExists } from 'date-fns';
-import InputText from 'src/components/InputText/InputText';
-import ErrorMessage from 'src/components/ErrorMessage/ErrorMessage';
+import InputText from '@/components/InputText/InputText';
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
 import range from 'lodash/range';
 import * as S from './profile.style';
-import { rules } from 'src/constants/rules';
-import { updateMe } from 'src/pages/Auth/auth.slice';
+import { rules } from '@/constants/rules';
+import { updateMe } from '@/pages/Auth/auth.slice';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 

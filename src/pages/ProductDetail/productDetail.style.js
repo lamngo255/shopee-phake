@@ -1,5 +1,5 @@
-import { Button } from 'src/assets/styles/utils';
-import { RatingStarPercent, RatingStarWrapper } from 'src/components/ProductRating/productRating.style';
+import { Button } from '@/assets/styles/utils';
+import { RatingStarPercent, RatingStarWrapper } from '@/components/ProductRating/productRating.style';
 import styled from 'styled-components';
 
 export const ProductBriefing = styled.div`

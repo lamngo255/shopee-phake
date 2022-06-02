@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { path } from 'src/constants/path';
+import { path } from '@/constants/path';
 import RatingStars from '../RatingStars/RatingStars';
 import * as S from './filterPanel.style';
 import PropTypes from 'prop-types';

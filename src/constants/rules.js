@@ -1,4 +1,4 @@
-import { isEmail } from 'src/utils/helper';
+import { isEmail } from '@/utils/helper';
 
 export const rules = {
   name: {

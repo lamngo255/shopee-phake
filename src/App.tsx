@@ -1,10 +1,10 @@
 import React from 'react';
 import 'normalize.css';
-import 'src/assets/styles/global.scss';
+import '@/assets/styles/global.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import Routes from './Routes';
 import { ToastContainer } from 'react-toastify';
-import Authorization from './components/Authorization/Authorization';
+import Authorization from '@/components/Authorization/Authorization';
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './ratingStar.style';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
-import { path } from 'src/constants/path';
+import { path } from '@/constants/path';
 import qs from 'query-string';
 import classNames from 'classnames';
 

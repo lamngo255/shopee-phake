@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from '../Profile/profile.style';
 import { PasswordContent } from './password.style';
-import InputPassword from 'src/components/InputPassword/InputPassword';
+import InputPassword from '@/components/InputPassword/InputPassword';
 
 export default function Password() {
   return (

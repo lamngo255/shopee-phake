@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { ButtonLink } from 'src/assets/styles/utils';
+import { ButtonLink } from '@/assets/styles/utils';
 import styled from 'styled-components';
 
 export const PurchaseTabs = styled.div`

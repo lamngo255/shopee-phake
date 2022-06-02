@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { path } from 'src/constants/path';
+import { path } from '@/constants/path';
 import Navbar from '../Navbar/Navbar';
 import * as S from './headerCart.style';
 

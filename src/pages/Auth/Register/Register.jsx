@@ -3,12 +3,12 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import { Button } from 'src/assets/styles/utils';
-import ErrorMessage from 'src/components/ErrorMessage/ErrorMessage';
-import InputPassword from 'src/components/InputPassword/InputPassword';
-import InputText from 'src/components/InputText/InputText';
-import { path } from 'src/constants/path';
-import { rules } from 'src/constants/rules';
+import { Button } from '@/assets/styles/utils';
+import ErrorMessage from '@/components/ErrorMessage/ErrorMessage';
+import InputPassword from '@/components/InputPassword/InputPassword';
+import InputText from '@/components/InputText/InputText';
+import { path } from '@/constants/path';
+import { rules } from '@/constants/rules';
 import { register } from '../auth.slice';
 import * as S from './register.style';
 

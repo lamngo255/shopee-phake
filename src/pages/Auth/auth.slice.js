@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import authApi from 'src/api/auth.api';
-import userAPI from 'src/api/user.api';
-import LocalStorage from 'src/constants/localStorage';
-import { payloadCreator } from 'src/utils/helper';
+import authApi from '@/api/auth.api';
+import userAPI from '@/api/user.api';
+import LocalStorage from '@/constants/localStorage';
+import { payloadCreator } from '@/utils/helper';
 
 export const register = createAsyncThunk('auth/register', payloadCreator(authApi.register));
 export const login = createAsyncThunk('auth/login', payloadCreator(authApi.login));

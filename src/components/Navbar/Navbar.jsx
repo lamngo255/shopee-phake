@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { path } from 'src/constants/path';
-import { useAuthenticated } from 'src/hooks/useAuthenticated';
+import { path } from '@/constants/path';
+import { useAuthenticated } from '@/hooks/useAuthenticated';
 import Popover from '../Popover/Popover';
-import usePopover from 'src/hooks/usePopover';
+import usePopover from '@/hooks/usePopover';
 import * as S from './navbar.style';
-import { logout } from 'src/pages/Auth/auth.slice';
+import { logout } from '@/pages/Auth/auth.slice';
 
 export default function Navbar() {
   const dispatch = useDispatch();

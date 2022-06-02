@@ -1,4 +1,4 @@
-import http from 'src/utils/http';
+import http from '@/utils/http';
 
 const URL = 'categories';
 

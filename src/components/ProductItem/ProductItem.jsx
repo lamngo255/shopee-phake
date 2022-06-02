@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import ProductRating from '../ProductRating/ProductRating';
 import * as S from './productItem.style';
 import PropTypes from 'prop-types';
-import { path } from 'src/constants/path';
-import { formatK, formatMoney, generateNameId } from 'src/utils/helper';
+import { path } from '@/constants/path';
+import { formatK, formatMoney, generateNameId } from '@/utils/helper';
 
 export default function ProductItem({ product }) {
   return (

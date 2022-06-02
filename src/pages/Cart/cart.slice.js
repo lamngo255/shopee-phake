@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { payloadCreator } from 'src/utils/helper';
+import { payloadCreator } from '@/utils/helper';
 import { logout } from '../Auth/auth.slice';
-import purchaseAPI from 'src/api/purchase.api';
+import purchaseAPI from '@/api/purchase.api';
 
 export const getCartPurchases = createAsyncThunk('cart/getCartPurchases', payloadCreator(purchaseAPI.getCartPurchases));
 export const updatePurchase = createAsyncThunk('cart/updatePurchase', payloadCreator(purchaseAPI.updatePurchase));

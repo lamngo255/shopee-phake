@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as S from './home.style';
-import FilterPanel from 'src/components/FilterPanel/FilterPanel';
-import SearchItemResult from 'src/components/SearchItemResult/SearchItemResult';
+import FilterPanel from '@/components/FilterPanel/FilterPanel';
+import SearchItemResult from '@/components/SearchItemResult/SearchItemResult';
 import { useEffect } from 'react';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { getCategories, getProducts } from './home.slice';
-import useQuery from 'src/hooks/useQuery';
+import useQuery from '@/hooks/useQuery';
 
 export default function Home() {
   const [categories, setCategories] = useState([]);

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button } from 'src/assets/styles/utils';
+import { Button } from '@/assets/styles/utils';
 import styled from 'styled-components';
 import BaseInputNumber from '../BaseInputNumber/BaseInputNumber';
 
