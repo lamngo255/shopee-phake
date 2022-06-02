@@ -57,7 +57,7 @@ export default function Register() {
       <S.Container className="container">
         <S.Banner />
         <S.FormWrapper>
-          <S.FormTitle>Đăng ký</S.FormTitle>
+          <S.FormTitle>Register</S.FormTitle>
           <S.Form onSubmit={handleSubmit(handleRegister)} noValidate>
             <S.FormControl>
               <Controller
@@ -84,7 +84,7 @@ export default function Register() {
                 render={({ field }) => (
                   <InputPassword
                     name="password"
-                    placeholder="Mật khẩu"
+                    placeholder="Password"
                     onChange={field.onChange}
                     value={getValues('password')}
                   />
@@ -98,12 +98,12 @@ export default function Register() {
                 control={control}
                 rules={{
                   ...rules.confirmedPassword,
-                  validate: { samePassword: v => v === getValues('password') || 'Mật khẩu không khớp' },
+                  validate: { samePassword: v => v === getValues('password') || 'Mismatched password' },
                 }}
                 render={({ field }) => (
                   <InputPassword
                     name="confirmedPassword"
-                    placeholder="Nhập lại mật khẩu"
+                    placeholder="Confirm password"
                     onChange={field.onChange}
                     value={getValues('confirmedPassword')}
                   />
@@ -112,13 +112,13 @@ export default function Register() {
               <ErrorMessage errors={errors} name="confirmedPassword" />
             </S.FormControl>
             <S.FormButton>
-              <Button type="submit">Đăng ký</Button>
+              <Button type="submit">Register</Button>
             </S.FormButton>
           </S.Form>
           <S.FormFooter>
-            <span>Bạn đã có tài khoản chưa</span>
+            <span>Have you registered yet?</span>
             <Link to={path.login} className="link">
-              Đăng nhập
+              Login
             </Link>
           </S.FormFooter>
         </S.FormWrapper>

@@ -24,9 +24,9 @@ export default function Navbar() {
               <S.UserImage src="https://cf.shopee.sg/file/a642075e792268a1b23562e65eed4bdd_tn" />
               <S.UserName>{profile.name || profile.email}</S.UserName>
               <Popover active={activePopover}>
-                <S.UserLink to={path.user}>Tài khoản của tôi</S.UserLink>
-                <S.UserLink to={path.purchase}>Đơn mua</S.UserLink>
-                <S.UserButton onClick={handleLogout}>Đăng xuất</S.UserButton>
+                <S.UserLink to={path.user}>My account</S.UserLink>
+                <S.UserLink to={path.purchase}>Orders</S.UserLink>
+                <S.UserButton onClick={handleLogout}>Logout</S.UserButton>
               </Popover>
             </S.User>
           </li>
@@ -35,10 +35,10 @@ export default function Navbar() {
         {!authenticated && (
           <Fragment>
             <li>
-              <S.NavLink to={path.register}>Đăng ký</S.NavLink>
+              <S.NavLink to={path.register}>Register</S.NavLink>
             </li>
             <li>
-              <S.NavLink to={path.login}>Đăng nhập</S.NavLink>
+              <S.NavLink to={path.login}>Login</S.NavLink>
             </li>
           </Fragment>
         )}

@@ -81,7 +81,7 @@ export default function RatingStars({ filters }) {
                   </svg>
                 );
               })}
-            {index !== 0 && <span>Trở lên</span>}
+            {index !== 0 && <span>And above</span>}
           </S.RatingStarsContainer>
         ))}
     </div>

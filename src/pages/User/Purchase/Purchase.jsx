@@ -5,11 +5,11 @@ export default function Purchase() {
   return (
     <div>
       <S.PurchaseTabs>
-        <S.PurchaseTabItem to="">Tất cả</S.PurchaseTabItem>
-        <S.PurchaseTabItem to="">Chờ xác nhận</S.PurchaseTabItem>
-        <S.PurchaseTabItem to="">Chờ lấy hàng</S.PurchaseTabItem>
-        <S.PurchaseTabItem to="">Đang giao</S.PurchaseTabItem>
-        <S.PurchaseTabItem to="">Đã huỷ</S.PurchaseTabItem>
+        <S.PurchaseTabItem to="">All</S.PurchaseTabItem>
+        <S.PurchaseTabItem to="">To Confirm</S.PurchaseTabItem>
+        <S.PurchaseTabItem to="">To Ship</S.PurchaseTabItem>
+        <S.PurchaseTabItem to="">To Receive</S.PurchaseTabItem>
+        <S.PurchaseTabItem to="">Cancelled</S.PurchaseTabItem>
       </S.PurchaseTabs>
       <S.PurchaseList>
         <S.OrderCard>
@@ -25,10 +25,10 @@ export default function Purchase() {
           </S.OrderCardContent>
           <S.OrderCardButtonsContainer>
             <S.PurchaseButton to="" light={1}>
-              Xem sản phẩm
+              View product
             </S.PurchaseButton>
             <S.TotalPrice>
-              <S.TotalPriceLabel>Tổng giá tiền</S.TotalPriceLabel>
+              <S.TotalPriceLabel>Total price</S.TotalPriceLabel>
               <S.TotalPricePrice>đ2000</S.TotalPricePrice>
             </S.TotalPrice>
           </S.OrderCardButtonsContainer>

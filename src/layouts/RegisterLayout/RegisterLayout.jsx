@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderRegister from 'src/components/HeaderRegister/HeaderRegister';
-import Footer from 'src/components/Footer/Footer';
 import PropTypes from 'prop-types';
 
 export default function RegisterLayout({ children, title }) {
@@ -8,7 +7,7 @@ export default function RegisterLayout({ children, title }) {
     <div>
       <HeaderRegister title={title} />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

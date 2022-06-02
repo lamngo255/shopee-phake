@@ -68,8 +68,8 @@ export default function Profile() {
   return (
     <S.Profile>
       <S.ProfileHeader>
-        <S.ProfileHeaderTitle>Hồ sơ của tôi</S.ProfileHeaderTitle>
-        <S.ProfileHeaderSubtitle>Quản lý thông tin hồ sơ</S.ProfileHeaderSubtitle>
+        <S.ProfileHeaderTitle>My profile</S.ProfileHeaderTitle>
+        <S.ProfileHeaderSubtitle>Manage user profile</S.ProfileHeaderSubtitle>
       </S.ProfileHeader>
 
       <S.ProfileInfo>
@@ -81,7 +81,7 @@ export default function Profile() {
             </S.InputLabelContent>
           </S.InputLabel>
           <S.InputLabel>
-            <S.InputLabelLabel>Tên</S.InputLabelLabel>
+            <S.InputLabelLabel>Name</S.InputLabelLabel>
             <S.InputLabelContent>
               <Controller
                 name="name"
@@ -95,7 +95,7 @@ export default function Profile() {
             </S.InputLabelContent>
           </S.InputLabel>
           <S.InputLabel>
-            <S.InputLabelLabel>Số điện thoại</S.InputLabelLabel>
+            <S.InputLabelLabel>Phone number</S.InputLabelLabel>
             <S.InputLabelContent>
               <Controller
                 name="phone"
@@ -109,7 +109,7 @@ export default function Profile() {
             </S.InputLabelContent>
           </S.InputLabel>
           <S.InputLabel>
-            <S.InputLabelLabel>Địa chỉ</S.InputLabelLabel>
+            <S.InputLabelLabel>Address</S.InputLabelLabel>
             <S.InputLabelContent>
               <Controller
                 name="address"
@@ -123,7 +123,7 @@ export default function Profile() {
             </S.InputLabelContent>
           </S.InputLabel>
           <S.InputLabel>
-            <S.InputLabelLabel>Ngày sinh</S.InputLabelLabel>
+            <S.InputLabelLabel>D.O.B</S.InputLabelLabel>
             <S.InputLabelContent>
               <S.DateSelect>
                 <Controller
@@ -136,7 +136,7 @@ export default function Profile() {
                   }}
                   render={({ field }) => (
                     <S.SelectDate
-                      title="Ngày"
+                      title="Day"
                       onChange={field.onChange}
                       value={getValues('date')}
                       options={range(0, 32).map(item => ({
@@ -157,7 +157,7 @@ export default function Profile() {
                   }}
                   render={({ field }) => (
                     <S.SelectDate
-                      title="Tháng"
+                      title="Month"
                       onChange={field.onChange}
                       value={getValues('month')}
                       options={range(0, 12).map(item => ({
@@ -178,7 +178,7 @@ export default function Profile() {
                   }}
                   render={({ field }) => (
                     <S.SelectDate
-                      title="Năm"
+                      title="Year"
                       onChange={field.onChange}
                       value={getValues('year')}
                       options={range(1900, 2021).map(item => ({
@@ -195,7 +195,7 @@ export default function Profile() {
             </S.ErrorMessage>
           </S.InputLabel>
           <S.Submit>
-            <S.ButtonSubmit type="submit">Lưu</S.ButtonSubmit>
+            <S.ButtonSubmit type="submit">Submit</S.ButtonSubmit>
           </S.Submit>
         </S.ProfileLeft>
 
@@ -205,10 +205,10 @@ export default function Profile() {
               <img src="https://cf.shopee.sg/file/a642075e792268a1b23562e65eed4bdd" alt="" />
             </S.Avatar>
             <S.InputFile type="file" accept=".jpg,.jpeg,.png" />
-            <S.ButtonUpload light>Chọn ảnh</S.ButtonUpload>
+            <S.ButtonUpload light>Picture</S.ButtonUpload>
             <S.AvatarUploaderTextContainer>
-              <div>Dung lượng file tối đa là 1MB</div>
-              <div>Định dạng: JPEG, PNG</div>
+              <div>Maximum size is 1MB</div>
+              <div>Format: JPEG, PNG</div>
             </S.AvatarUploaderTextContainer>
           </S.AvatarUploader>
         </S.ProfileRight>

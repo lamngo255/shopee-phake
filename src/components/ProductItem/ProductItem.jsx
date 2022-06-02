@@ -24,7 +24,7 @@ export default function ProductItem({ product }) {
               <ProductRating rating={product.rating} />
               <S.ProductItemSold>
                 <span>{formatK(product.sold)}</span>
-                <span>Đã bán</span>
+                <span>sold</span>
               </S.ProductItemSold>
             </S.ProductItemMeta>
           </S.ProductItemInfo>

@@ -124,22 +124,22 @@ export default function ProductDetail() {
                 </S.ProductRating>
                 <S.ProductSold>
                   <span>{formatK(product.sold)}</span>
-                  <span>Đã bán</span>
+                  <span>Sold</span>
                 </S.ProductSold>
               </S.ProductMeta1>
               <S.ProductPrice>
                 <S.ProductPriceOriginal>đ{formatMoney(product.price_before_discount)}</S.ProductPriceOriginal>
                 <S.ProductPriceSale>đ{formatMoney(product.price)}</S.ProductPriceSale>
                 <S.ProductPriceSalePercent>
-                  {rateSale(product.price_before_discount, product.price)} giảm
+                  {rateSale(product.price_before_discount, product.price)} OFF
                 </S.ProductPriceSalePercent>
               </S.ProductPrice>
               <S.ProductBuyQuantity>
-                <S.ProductBuyQuantityTitle>Số lượng</S.ProductBuyQuantityTitle>
+                <S.ProductBuyQuantityTitle>Quantity</S.ProductBuyQuantityTitle>
                 <S.ProductBuyQuantityController>
                   <ProductQuantityController value={quantity} max={product.quantity} onChange={handleChangeQuantity} />
                 </S.ProductBuyQuantityController>
-                <S.ProductBuyQuantityQuantity>{product.quantity} sản phẩm có sẵn</S.ProductBuyQuantityQuantity>
+                <S.ProductBuyQuantityQuantity>{product.quantity} products available</S.ProductBuyQuantityQuantity>
               </S.ProductBuyQuantity>
               <S.ProductButtons onClick={handleAddToCart}>
                 <svg
@@ -165,13 +165,13 @@ export default function ProductDetail() {
                     <line fill="none" strokeLinecap="round" strokeMiterlimit={10} x1={9} x2={9} y1="8.5" y2="5.5" />
                   </g>
                 </svg>
-                Thêm vào giỏ hàng
+                Add to cart
               </S.ProductButtons>
             </S.ProductMeta>
           </S.ProductBriefing>
 
           <S.ProductContent>
-            <S.ProductContentHeading>MÔ TẢ SẢN PHẨM</S.ProductContentHeading>
+            <S.ProductContentHeading>PRODUCT DESCRIPTION</S.ProductContentHeading>
             <S.ProductContentDetail dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(product.description) }} />
           </S.ProductContent>
         </div>

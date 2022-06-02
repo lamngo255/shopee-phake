@@ -29,14 +29,14 @@ export default function Routes() {
       </Route>
       <Route path={path.login}>
         <UnauthenticatedGuard>
-          <RegisterLayout title="Đăng nhập">
+          <RegisterLayout title="Login">
             <Login />
           </RegisterLayout>
         </UnauthenticatedGuard>
       </Route>
       <Route path={path.register}>
         <UnauthenticatedGuard>
-          <RegisterLayout title="Đăng ký">
+          <RegisterLayout title="Register">
             <Register />
           </RegisterLayout>
         </UnauthenticatedGuard>

@@ -52,7 +52,7 @@ export default function FilterPanel({ categories, filters }) {
   const validPrice = () => {
     const minPrice = getValues('minPrice');
     const maxPrice = getValues('maxPrice');
-    const message = 'Vui lòng điền khoảng giá phù hợp';
+    const message = 'Please enter valid price range';
 
     if (minPrice !== '' && maxPrice !== '') {
       return Number(maxPrice) >= Number(minPrice) || message;
@@ -83,7 +83,7 @@ export default function FilterPanel({ categories, filters }) {
             </g>
           </g>
         </svg>
-        Tất cả danh mục
+        All categories
       </S.CategoryTitleLink>
       <S.CategoryList>
         {categories.map(category => (
@@ -113,10 +113,10 @@ export default function FilterPanel({ categories, filters }) {
             />
           </g>
         </svg>
-        Bộ lọc tìm kiếm
+        Filter
       </S.CategoryTitle>
       <S.FilterGroup>
-        <S.FilterGroupHeader>Khoảng giá</S.FilterGroupHeader>
+        <S.FilterGroupHeader>Price range</S.FilterGroupHeader>
         <S.PriceRange>
           <S.PriceRangeGroup>
             <Controller
@@ -127,7 +127,7 @@ export default function FilterPanel({ categories, filters }) {
               }}
               render={({ field }) => (
                 <S.PriceRangeInput
-                  placeholder="Từ"
+                  placeholder="From"
                   onChange={value => {
                     clearErrors();
                     field.onChange(value);
@@ -146,7 +146,7 @@ export default function FilterPanel({ categories, filters }) {
               }}
               render={({ field }) => (
                 <S.PriceRangeInput
-                  placeholder="Đến"
+                  placeholder="To"
                   onChange={value => {
                     clearErrors();
                     field.onChange(value);
@@ -157,16 +157,16 @@ export default function FilterPanel({ categories, filters }) {
             />
           </S.PriceRangeGroup>
           {Object.values(errors).length !== 0 && (
-            <S.PriceErrorMessage>Vui lòng điền khoản giá phù hợp</S.PriceErrorMessage>
+            <S.PriceErrorMessage>Please enter valid price range</S.PriceErrorMessage>
           )}
-          <S.PriceRangeButton onClick={handleSubmit(searchPrice)}>Áp dụng</S.PriceRangeButton>
+          <S.PriceRangeButton onClick={handleSubmit(searchPrice)}>Apply</S.PriceRangeButton>
         </S.PriceRange>
       </S.FilterGroup>
       <S.FilterGroup>
-        <S.FilterGroupHeader>Đánh giá</S.FilterGroupHeader>
+        <S.FilterGroupHeader>Rating</S.FilterGroupHeader>
         <RatingStars filters={filters} />
       </S.FilterGroup>
-      <S.RemoveFilterButton onClick={clearAll}>Xoá tất cả</S.RemoveFilterButton>
+      <S.RemoveFilterButton onClick={clearAll}>Clear all</S.RemoveFilterButton>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function HeaderRegister({ title }) {
           <S.HeaderTitle>{title}</S.HeaderTitle>
         </S.HeaderBrand>
         <Link to="" className="link">
-          Cần trợ giúp
+          Need help?
         </Link>
       </S.Container>
     </S.Header>

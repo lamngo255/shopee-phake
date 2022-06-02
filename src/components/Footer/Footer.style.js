@@ -27,14 +27,3 @@ export const Language = styled.div`
     }
   }
 `;
-
-export const Footer2 = styled.div`
-  font-size: 1.2rem;
-  text-align: center;
-  div {
-    line-height: 2;
-    :first-child {
-      margin-bottom: 1.5rem;
-    }
-  }
-`;

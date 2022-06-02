@@ -50,16 +50,16 @@ export default function SearchItemResult({ products, filters }) {
   return (
     <div>
       <S.SortBar>
-        <S.SortBarLabel>Sắp xếp theo</S.SortBarLabel>
+        <S.SortBarLabel>Order by</S.SortBarLabel>
         <S.SortByOptions>
           <S.SortByOptionsOption onClick={() => sortBy('view')} className={handleActiveOptionSort('view')}>
-            Phổ biến
+            Most popular
           </S.SortByOptionsOption>
           <S.SortByOptionsOption onClick={() => sortBy('createdAt')} className={handleActiveOptionSort('createdAt')}>
-            Mới nhất
+            Newest
           </S.SortByOptionsOption>
           <S.SortByOptionsOption onClick={() => sortBy('sold')} className={handleActiveOptionSort('sold')}>
-            Bán chạy
+            Best-selling
           </S.SortByOptionsOption>
           <S.SortByPrice
             onChange={event => sortBy(...event.target.value.split(':'))}
@@ -67,10 +67,10 @@ export default function SearchItemResult({ products, filters }) {
             value={handleSortByPriceValue()}
           >
             <option disabled value="">
-              Giá
+              Price
             </option>
-            <option value="price:asc">Giá: Thấp đến cao</option>
-            <option value="price:desc">Giá: Cao đến thấp</option>
+            <option value="price:asc">Price: Low to high</option>
+            <option value="price:desc">Price: High to low</option>
           </S.SortByPrice>
         </S.SortByOptions>
 

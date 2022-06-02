@@ -56,7 +56,7 @@ export default function Login() {
       <S.Container className="container">
         <S.Banner />
         <S.FormWrapper>
-          <S.FormTitle>Đăng Nhập</S.FormTitle>
+          <S.FormTitle>Login</S.FormTitle>
           <S.Form onSubmit={handleSubmit(handleLogin)} noValidate>
             <S.FormControl>
               <Controller
@@ -83,7 +83,7 @@ export default function Login() {
                 render={({ field }) => (
                   <InputPassword
                     name="password"
-                    placeholder="Mật khẩu"
+                    placeholder="Password"
                     onChange={field.onChange}
                     value={getValues('password')}
                   />
@@ -92,13 +92,13 @@ export default function Login() {
               <ErrorMessage errors={errors} name="password" />
             </S.FormControl>
             <S.FormButton>
-              <Button type="submit">Đăng nhập</Button>
+              <Button type="submit">Login</Button>
             </S.FormButton>
           </S.Form>
           <S.FormFooter>
-            <span>Bạn mới biết đến Shopee</span>
+            <span>You just heard of Shopee</span>
             <Link to={path.register} className="link">
-              Đăng ký
+              Register
             </Link>
           </S.FormFooter>
         </S.FormWrapper>

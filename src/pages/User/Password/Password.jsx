@@ -7,30 +7,30 @@ export default function Password() {
   return (
     <S.Profile>
       <S.ProfileHeader>
-        <S.ProfileHeaderTitle>Đổi mật khẩu</S.ProfileHeaderTitle>
-        <S.ProfileHeaderSubtitle>Để bảo mật tài khoản</S.ProfileHeaderSubtitle>
+        <S.ProfileHeaderTitle>Change password</S.ProfileHeaderTitle>
+        <S.ProfileHeaderSubtitle>to protect your account</S.ProfileHeaderSubtitle>
         <PasswordContent>
           <S.InputLabel>
-            <S.InputLabelLabel>Mật khẩu cũ</S.InputLabelLabel>
+            <S.InputLabelLabel>Old password</S.InputLabelLabel>
             <S.InputLabelContent>
               <InputPassword name="password" />
             </S.InputLabelContent>
           </S.InputLabel>
           <S.InputLabel>
-            <S.InputLabelLabel>Mật khẩu mới</S.InputLabelLabel>
+            <S.InputLabelLabel>New password</S.InputLabelLabel>
             <S.InputLabelContent>
               <InputPassword name="new_password" />
             </S.InputLabelContent>
           </S.InputLabel>
           <S.InputLabel>
-            <S.InputLabelLabel>Nhập lại mật khẩu</S.InputLabelLabel>
+            <S.InputLabelLabel>Confirm new password</S.InputLabelLabel>
             <S.InputLabelContent>
               <InputPassword name="confirm_new_password" />
             </S.InputLabelContent>
           </S.InputLabel>
 
           <S.Submit>
-            <S.ButtonSubmit type="submit">Lưu</S.ButtonSubmit>
+            <S.ButtonSubmit type="submit">Submit</S.ButtonSubmit>
           </S.Submit>
         </PasswordContent>
       </S.ProfileHeader>
